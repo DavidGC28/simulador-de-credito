@@ -9,39 +9,59 @@
 <body>
 
     <div class="container">
+    <img src="banco.png" alt="Logo Banco" class="logo-banco">
+    
+    <h1>Simulador de Crédito</h1>
+    </div>
+    <div class="container">
         <h1>Simulador de Crédito</h1>
 
         <h2>Datos financieros</h2>
-        <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+        
+        <label for="txtIngresos">Ingresos mensuales ($):</label>
+        <input type="text" id="txtIngresos" placeholder="Ej: 1500">
 
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <div class="seccion-egresos">
+            <h3>Detalle de Gastos</h3>
+            
+            <label for="txtArriendo">Arriendo / Hipoteca ($):</label>
+            <input type="text" id="txtArriendo" placeholder="Ej: 400">
 
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+            <label for="txtAlimentacion">Alimentación ($):</label>
+            <input type="text" id="txtAlimentacion" placeholder="Ej: 250">
+
+            <label for="txtVarios">Otros gastos (Varios) ($):</label>
+            <input type="text" id="txtVarios" placeholder="Ej: 100">
+        </div>
+
+        <p>Disponible: <span id="spnDisponible">$0</span></p>
+        <p>Capacidad de pago mensual (40%): <span id="spnCapacidadPago">$0</span></p>
+
+        <hr>
 
         <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+        <label for="txtMonto">Monto a solicitar ($):</label>
+        <input type="text" id="txtMonto" placeholder="Ej: 5000">
 
         <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
+        <input type="text" id="txtPlazo" placeholder="Ej: 3">
 
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+        <label for="txtTasaInteres">Tasa de interés anual (%):</label>
+        <input type="text" id="txtTasaInteres" placeholder="Ej: 12">
 
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        <div class="resultados-finales">
+            <p>Interés a pagar: <span id="spnInteresPagar">$0</span></p>
+            <p>Total préstamo: <span id="spnTotalPrestamo">$0</span></p>
+            <p><strong>Cuota mensual: <span id="spnCuotaMensual">$0.00</span></strong></p>
+            <p>Estado de crédito: <span id="spnEstadoCredito" style="font-weight: bold;">ESPERANDO DATOS...</span></p>
+        </div>
 
         <div class="buttons">
             <button id="btnCalcularCredito">Calcular Crédito</button>
             <button id="btnReiniciar">Reiniciar</button>
         </div>
     </div>
-<script src="simulador.js"></script>
-</body>
+
+    <script src="simulador.js"></script>
 </body>
 </html>
